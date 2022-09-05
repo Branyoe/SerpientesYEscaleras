@@ -13,6 +13,8 @@ class Tablero {
     this.#mapa = data;
   }
 
+  
+
   get mapa () {return this.#mapa};
 }
 

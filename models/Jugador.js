@@ -1,10 +1,13 @@
 class Jugador{
   #posicion = 0;
+  #nombre = '';
+  #dado = null;
+  #tablero = [];
 
   constructor(nombre, dado, tablero){
     this.#nombre = nombre;
     this.#dado = dado;
-    this.#posicion = posicion;
+    this.#posicion = 0;
     this.#tablero = tablero;
   }
 
@@ -15,11 +18,15 @@ class Jugador{
     console.log(`Jugador ${this.#nombre} en: ${this.#posicion}`);
   }
 
-  #validarPosicion(posicionActual){
-    if(posicionActual )
+  validarPosicion(posicionActual){
+      let element = this.#tablero.mapa.find((e) => e.posicion === posicionActual);
+      console.log(element)
+      return element;
   }
 
   //getter, setters
   get nombre(){ return this.#nombre; };
   set posicion(valor){ this.#posicion = valor}
 }
+
+module.exports = Jugador;
