@@ -6,6 +6,12 @@ const table = new Tablero(1, 2);
 const dado = new Dado();
 
 const jugador1 = new Jugador("Juan", dado,table);
-jugador1.validarPosicion(1);
+jugador1.ejecutarTurno();
+jugador1.ejecutarTurno();
+jugador1.ejecutarTurno();
+jugador1.ejecutarTurno();
+jugador1.ejecutarTurno();
+jugador1.ejecutarTurno();
+jugador1.ejecutarTurno();
 
 // console.table(table.mapa);

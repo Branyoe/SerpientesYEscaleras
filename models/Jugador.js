@@ -16,11 +16,18 @@ class Jugador{
 
     this.#posicion += nPasos;
     console.log(`Jugador ${this.#nombre} en: ${this.#posicion}`);
+
+    let modificadorEncontrado = this.#validarPosicion(this.#posicion);
+    if(modificadorEncontrado){
+      console.log(`Jugador ${this.#nombre} callló en ${modificadorEncontrado.movimiento < 0 ? 'serpientes' : 'escaleras'}`);
+      this.#posicion += modificadorEncontrado.movimiento;
+      console.log(`posicion actualizada: ${this.#posicion}`);
+    }
   }
 
-  validarPosicion(posicionActual){
-      let element = this.#tablero.mapa.find((e) => e.posicion === posicionActual);
-      console.log(element)
+  #validarPosicion(posicion){
+      let element = this.#tablero.mapa.find((e) => e.posicion === posicion);
+      // console.log(element)
       return element;
   }
 
