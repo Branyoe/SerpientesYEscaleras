@@ -15,13 +15,13 @@ class Jugador{
     let nPasos = this.#dado.lanzar();
 
     this.#posicion += nPasos;
-    console.log(`Jugador ${this.#nombre} en: ${this.#posicion}`);
+    console.log(`*Jugador ${this.#nombre} en: ${this.#posicion}`);
 
     let modificadorEncontrado = this.#validarPosicion(this.#posicion);
     if(modificadorEncontrado){
-      console.log(`Jugador ${this.#nombre} callló en ${modificadorEncontrado.movimiento < 0 ? 'serpientes' : 'escaleras'}`);
+      console.log(`  Jugador ${this.#nombre} callló en ${modificadorEncontrado.movimiento < 0 ? 'serpientes' : 'escaleras'}`);
       this.#posicion += modificadorEncontrado.movimiento;
-      console.log(`posicion actualizada: ${this.#posicion}`);
+      console.log(`  posicion actualizada: ${this.#posicion}`);
     }
   }
 
@@ -32,7 +32,9 @@ class Jugador{
   }
 
   //getter, setters
-  get nombre(){ return this.#nombre; };
+  get getNombre(){ return this.#nombre; };
+  get getPosicion(){ return this.#posicion; };
+
   set posicion(valor){ this.#posicion = valor}
 }
 
